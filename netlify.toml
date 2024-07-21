@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/frontend/browser"
+  publish = "dist/frontend/browser/browser"
 
 [context.production.environment]
   API_URL = "https://sojourn-backend-552bf7105895.herokuapp.com/api"
