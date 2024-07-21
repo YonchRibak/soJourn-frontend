@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Londrina Solid";
+  src: url("/assets/fonts/LondrinaSolid-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --primary: #a5e9e1;
   --primary-darkened: #08ab98;

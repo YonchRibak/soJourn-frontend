@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Solid:wght@100;300;400;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ga+Maamli&family=Londrina+Solid:wght@100;300;400;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Solid:wght@100;300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ga+Maamli&family=Londrina+Solid:wght@100;300;400;900&display=swap"); */
 .card {
   position: relative;
   height: clamp(25vh, 100%, 100%);
