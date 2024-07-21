@@ -1,5 +1,5 @@
 [build]
-  command = "ng build --configuration production"
+  command = "npm run build && sed -i 's|https://sojourn-backend-552bf7105895.herokuapp.com/api|'\"$API_URL\"'|g' dist/frontend/browser/browser/env.js"
   publish = "dist/frontend/browser/browser"
 
 [context.production.environment]

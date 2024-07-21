@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "types": ["node"],
+    "typeRoots": ["node_modules/@types", "src/types"],
     "strictNullChecks": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
