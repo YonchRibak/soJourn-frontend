@@ -5,6 +5,7 @@ import { importProvidersFrom } from "@angular/core";
 import { HttpInterceptorModule } from "../http-interceptor.module";
 import { AnimationModule } from "../animation.module";
 import { provideToastr, ToastrModule } from "ngx-toastr";
+import { environment } from "../environments/environment";
 
 export const appConfig = {
   providers: [
@@ -18,7 +19,7 @@ export const appConfig = {
     ),
   ],
 
-  registerUrl: "http://localhost:4000/api/register",
+  registerUrl: `${environment.apiUrl}/register`,
 
   vacationsUrl(
     page: number = 1,
@@ -27,11 +28,11 @@ export const appConfig = {
     searchValue?: string
   ): string {
     if (!searchValue)
-      return `http://localhost:4000/api/vacations/${sortBy}/${filterBy}?page=${page}&limit=9`;
-    return `http://localhost:4000/api/vacations/${sortBy}/${filterBy}/${searchValue}?page=${page}&limit=9`;
+      return `${environment.apiUrl}/vacations/${sortBy}/${filterBy}?page=${page}&limit=9`;
+    return `${environment.apiUrl}/vacations/${sortBy}/${filterBy}/${searchValue}?page=${page}&limit=9`;
   },
 
-  vacationUrlStatic: "http://localhost:4000/api/vacations/",
-  loginUrl: "http://localhost:4000/api/login/",
-  usersUrl: "http://localhost:4000/api/users/",
+  vacationUrlStatic: `${environment.apiUrl}/vacations/`,
+  loginUrl: `${environment.apiUrl}/login/`,
+  usersUrl: `${environment.apiUrl}/users/`,
 };

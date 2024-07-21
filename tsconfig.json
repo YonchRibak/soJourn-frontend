@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["node"],
     "strictNullChecks": false,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
