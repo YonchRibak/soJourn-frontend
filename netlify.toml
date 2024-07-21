@@ -1,12 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/frontend"
-
-# Set environment variables here or in the Netlify UI
-#[[redirects]]
-#  from = "/*"
-#  to = "/index.html"
-#  status = 200
+  publish = "dist/frontend/browser"
 
 [context.production.environment]
   API_URL = "https://sojourn-backend-552bf7105895.herokuapp.com/api"
