@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg bg-teal">
+  <a class="navbar-brand" routerLink="/">
+    <img
+      src="../assets/logo.png"
+      class="img-fluid logo"
+      style="width: 100%; height: 100px"
+    />
+  </a>
+  <div
+    *isLoggedIn
+    class="hello-user"
+    customStyle
+    [mobileStyle]="{ fontSize: '0.5rem' }"
+    [laptopStyle]="{ fontSize: '1rem' }"
+  >
+    Hello {{ user?.firstName }} <span *isAdmin> | </span
+    ><span *isAdmin>Admin Access</span>
+  </div>
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{ show: navbarOpen }">
+    <div class="navbar-nav ml-auto">
+      <a
+        *isAdmin
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/report']"
+        (click)="toggleNavbar()"
+      >
+        <span>Reports</span>
+      </a>
+      <a
+        *isAdmin
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/add']"
+        (click)="toggleNavbar()"
+      >
+        <span>Add</span>
+      </a>
+      <a
+        *isLoggedIn
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/home']"
+        (click)="toggleNavbar()"
+      >
+        <span>Home</span>
+      </a>
+      <a
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/about']"
+        (click)="toggleNavbar()"
+      >
+        <span>About</span>
+      </a>
+      <a
+        *isLoggedOut
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/login']"
+        (click)="toggleNavbar()"
+      >
+        <span>Login</span>
+      </a>
+      <a
+        *isLoggedOut
+        class="dropdown-item custom-link"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/register']"
+        (click)="toggleNavbar()"
+      >
+        <span>Register</span>
+      </a>
+      <a
+        *isLoggedIn
+        customStyle
+        [mobileStyle]="{ marginBottom: '2rem' }"
+        class="dropdown-item custom-link"
+        (click)="logout()"
+      >
+        <span>Logout</span>
+      </a>
+    </div>
+  </div>
+</nav>

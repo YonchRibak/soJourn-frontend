@@ -1,0 +1,116 @@
+<div class="container" *ngIf="user?._id && countries?.[0]?.name">
+  <h3 customStyle [mobileStyle]="{ fontSize: '1.5rem' }">
+    Purchasing vacation package to {{ vacation?.destination }} for
+    {{ vacation?.price | customCurrency : "EUR" }}
+  </h3>
+  <form
+    customStyle
+    [mobileStyle]="{ display: 'flex', flexDirection: 'column' }"
+  >
+    <div class="card-info">
+      <h4>Card Information</h4>
+      <div customStyle [mobileStyle]="{ width: '100%' }" class="card-details">
+        <img src="../../../../assets/visa-logo.png" />
+        <div class="card-number">
+          <label for="cardNumber">Card Number</label>
+          <input
+            name="cardNumber"
+            type="text"
+            (input)="formatCardNumber($event)"
+            (keypress)="allowOnlyNumbers($event)"
+            [value]="creditCardValue"
+            maxlength="19"
+            pattern="\d*"
+          />
+        </div>
+        <hr />
+        <div class="expiration-cvv">
+          <div class="expiration">
+            <label for="month">Expiration Date</label>
+            <div class="expiration-inputs">
+              <input
+                type="text"
+                maxlength="2"
+                (keypress)="allowOnlyNumbers($event)"
+                name="month"
+              />
+              <span> / </span>
+              <input
+                type="text"
+                maxlength="2"
+                (keypress)="allowOnlyNumbers($event)"
+                name="year"
+              />
+            </div>
+          </div>
+          <div class="cvv">
+            <label customStyle [mobileStyle]="{ fontSize: '0.7rem' }" for="cvv"
+              >CVV Code</label
+            >
+            <input
+              type="password"
+              name="cvv"
+              maxlength="3"
+              (keypress)="allowOnlyNumbers($event)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="personal-info">
+      <h4>Personal Information</h4>
+      <div class="name">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          [(ngModel)]="user.firstName"
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+          [(ngModel)]="user.lastName"
+        />
+      </div>
+      <div class="countries-container">
+        <input
+          type="text"
+          name="country"
+          placeholder="Country"
+          [(ngModel)]="countryInput"
+          (input)="filterCountries($event)"
+        />
+        <div class="countries-select" *ngIf="filteredCountries?.length > 0">
+          <span
+            *ngFor="let c of filteredCountries"
+            (click)="selectCountry(c)"
+            >{{ c.name.common }}</span
+          >
+        </div>
+      </div>
+      <div class="city-zip">
+        <input type="text" placeholder="city" name="city" />
+        <input type="text" placeholder="Zip Code" name="zip" />
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        [(ngModel)]="user.email"
+      />
+      <div class="phone">
+        <input type="text" name="idd" [(ngModel)]="idd" placeholder="+123" />
+        <input
+          type="text"
+          placeholder="Phone Number"
+          name="phone"
+          maxlength="9"
+          (keypress)="allowOnlyNumbers($event)"
+          pattern="\d*"
+        />
+      </div>
+    </div>
+    <button>Pay</button>
+  </form>
+</div>

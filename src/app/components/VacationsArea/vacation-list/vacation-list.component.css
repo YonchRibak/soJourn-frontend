@@ -1,0 +1,68 @@
+.list-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem;
+  gap: 3rem;
+}
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+i-tabler {
+  stroke-width: 0.075rem;
+  fill: var(--primary);
+  color: var(--primary);
+  color: transparent;
+
+  rotate: -45deg;
+  filter: drop-shadow(-2px 4px 1px var(--secondary));
+  transform: translateY(-3px);
+}
+
+header > h3 {
+  text-shadow: 2px 4px 1px var(--secondary);
+  color: var(--primary);
+}
+.vacations-grid {
+  display: grid;
+
+  gap: 1.5rem;
+}
+
+.pagination-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pagination-btns > i-tabler {
+  color: white;
+  fill: none;
+  rotate: none;
+  scale: 250%;
+  cursor: pointer;
+  transition: transform ease-in-out 200ms;
+}
+
+.pagination-btns > i-tabler:hover {
+  transform: scale(1.125) translateY(-0.25rem);
+  transition: transform ease-in-out 200ms;
+}
+.scroll-up {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  color: white;
+  rotate: none;
+  fill: none;
+  z-index: 10;
+  scale: 150%;
+  transition: opacity 0.5s ease-in-out;
+}

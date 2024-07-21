@@ -1,0 +1,48 @@
+.vacations-data-handler {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+label {
+  color: var(--primary);
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox-label-pair {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.label-select-pair {
+  display: flex;
+  flex-direction: column;
+}
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.search-bar > input,
+select {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+i-tabler {
+  color: white;
+  filter: drop-shadow(-2px 4px 1px var(--secondary));
+}
+.toggler {
+  position: absolute;
+  cursor: pointer;
+  transition: transform ease-in-out 200ms;
+}
+
+.toggler:hover {
+  transform: scale(1.2);
+}

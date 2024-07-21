@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.report-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.report {
+  display: flex;
+}
+.axis-label-blue {
+  fill: blue;
+}
+
+.axis-label-default {
+  fill: black;
+}
+button {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--primary);
+  width: clamp(10vw, 100%, 20vw);
+}
