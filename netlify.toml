@@ -1,6 +1,6 @@
 [build]
   command = "ng build --configuration production"
-  publish = "dist/Frontend"
+  publish = "dist/frontend/browser"
 
 # Set environment variables here or in the Netlify UI
 #[[redirects]]
